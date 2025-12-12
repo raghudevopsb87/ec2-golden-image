@@ -31,9 +31,12 @@ resource "aws_ami_from_instance" "ami" {
   name               = "roboshop-golden-image"
   source_instance_id = aws_instance.ami.id
 
-  lifecycle {
-    destroy = true
+  removed {
+    lifecycle {
+      destroy = true
+    }
   }
+
 }
 
 
